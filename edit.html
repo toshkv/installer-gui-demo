@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Program Installer</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+		#taskcontainer { border:2px solid #ccc; overflow-y: scroll; height: 300px;padding: 5px 10px 10px 10px; }
+		.taskeditcontainer {overflow-y: scroll; height: 300px; padding: 10px 10px 10px 10px; }
+	</style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					Program Installer
+				</h1>
+				<br />
+			</div>
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="edit.html">Edit</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="params.html">Parameters</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="verify.html">Verify</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="install.html">Install</a>
+				</li>
+			</ul>
+			<br />
+			<div class="row">
+				<div class="col-md-6">
+					<span class="font-weight-bold">Tasks:</span>
+				<form>
+					<div id="taskcontainer rounded" class="form-group">
+						<label for="exampleFormControlSelect2">Select task to edit</label>
+    					<select multiple class="form-control" id="exampleFormControlSelect2">
+						<option> Server ping check </option>
+						<option> Create Windows users </option>
+						<option> Turn off Windows setting </option>
+						<option> Create folders </option>
+						<option> Copy {foldername} folder </option>
+						<option> Set folder permissions </option>
+						<option> Install Windows setting </option>
+						<option> Add 64 bit support </option>
+						<option> Create program shortcut </option>
+						<option> Add environmental variables </option>
+						<option> Install {3rd party program name} </option>
+						</select>
+				</div>
+				</div>
+			</form>
+				<div class="col-md-6">
+					 <span class="font-weight-bold">Task Edit:</span>
+					<div class="taskeditcontainer rounded">
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<br />
+					<div class="col text-right">
+					<button type="button" class="btn btn-success">
+						Save Changes
+					</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Program Installer</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+.taskcontainer { border:2px solid #ccc; overflow-y: scroll; height: 300px;padding: 5px 10px 10px 10px; }
+.logcontainer {background: #bdbdbd; overflow-y: scroll; height: 300px; padding: 10px 10px 10px 10px; }
+.verified {color:rgb(90, 90, 207);}
+.completed {color: rgb(230, 69, 69)}
+	</style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					Program Installer
+				</h1>
+				<br />
+			</div>
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link" href="edit.html">Edit</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="params.html">Parameters</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="verify.html">Verify</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="install.html">Install</a>
+				</li>
+			</ul>
+			<br />
+			<button id="all" type="button" class="btn btn-primary">
+				Select all tasks
+			</button>
+			<button id="pre" type="button" class="btn btn-primary">
+				Pre-install tasks only
+			</button>
+			<div class="row">
+				<div class="col-md-6">
+					<span class="font-weight-bold">Tasks:</span>
+					<div class="taskcontainer rounded">
+						<input type="checkbox" name="preinstall" /> Server ping check <br />
+						<input type="checkbox" name="preinstall" /> Create Windows users <br />
+						<input type="checkbox" name="preinstall" /> Turn off Windows setting <br />
+						<input type="checkbox" /> Create folders <br />
+						<input type="checkbox" /> Copy {foldername} folder <br />
+						<input type="checkbox" /> Set folder permissions <br />
+						<input type="checkbox" /> Install Windows setting <br />
+						<input type="checkbox" name="preinstall" /> Add 64 bit support <br />
+						<input type="checkbox" name="preinstall" /> Create program shortcut <br />
+						<input type="checkbox" name="preinstall" /> Add environmental variables <br />
+						<input type="checkbox" name="preinstall" /> Install {3rd party program name} <br />
+				</div>
+					<dl>
+						<dd>
+							* Tasks are executed in the list order shown above.
+						</dd>
+					</dl>
+				</div>
+				<div class="col-md-6">
+					 <span class="font-weight-bold">Log:</span>
+					<div class="logcontainer rounded"> 
+					<h6>
+						Server ping check <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+					</h6>
+					<p>
+						<a class="btn" href="#">View details »</a>
+					</p>
+										<h6>
+						Task... VERIFIED
+					</h6>
+					<p>
+						<a class="btn" href="#">View details »</a>
+					</p>
+										<h6>
+						Task... VERIFIED
+					</h6>
+					<p>
+						<a class="btn" href="#">View details »</a>
+					</p>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress">
+						<div class="progress-bar w-25">
+						</div>
+					</div>
+					<br />
+					<!--
+					<div class="alert alert-danger alert-dismissable">
+						 
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+							Ã
+						</button>
+						<h4>
+							Alert!
+						</h4> <strong>Warning!</strong> Are you sure you want to continue? <a href="#" class="alert-link">Yes</a>
+						<a href="#" class="alert-link"> No</a>
+					</div> 
+					<br />
+					-->
+					<div class="col text-right">
+					<button type="button" class="btn btn-primary">
+						Verify Install
+					</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		function check(checked = true) {
+			const cbs = document.querySelectorAll('input[name="preinstall"]');
+			cbs.forEach((cb) => {
+				cb.checked = checked;
+			});
+		}
+		
+		const btn = document.querySelector('#pre');
+		btn.onclick = checkPre;
+
+		function checkPre() {
+			check();
+			this.onclick = uncheckPre;
+		}
+
+		function uncheckPre() {
+			check(false);
+			this.onclick = checkPre;
+		}
+
+	</script>
+  </body>
+</html>

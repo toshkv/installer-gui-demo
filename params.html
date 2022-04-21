@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Program Installer</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<style>
+		.taskcontainer { border:2px solid #ccc; overflow-y: scroll; height: 300px;padding: 5px 10px 10px 10px; }
+		.logcontainer {background: #bdbdbd; overflow-y: scroll; height: 300px; padding: 10px 10px 10px 10px; }
+	</style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					Program Installer
+				</h1>
+				<br />
+			</div>
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link" href="edit.html">Edit</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="params.html">Parameters</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="verify.html">Verify</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="install.html">Install</a>
+				</li>
+			</ul>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<span class="font-weight-bold">Servers:</span>
+						<form>
+							<div class="col-md-4">
+								<div class="form-group">
+									<select class="form-control" id="exampleFormControlSelect1">
+										<option>Select server</option>
+										<option>Program application server</option>
+										<option>Program storage server</option>
+										<option>Another application server</option>
+										<option>SQL database server</option>
+										<option>Other server</option>
+									</select>
+									<input type="text" class="form-control" id="server1" aria-describedby="emailHelp" placeholder="Enter hostname">
+									<input type="text" class="form-control" id="server1" aria-describedby="emailHelp" placeholder="Enter IP address">
+									<br />
+								</div> 
+							  <br />
+							</div>
+							<div class="col text-right">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						  </form>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
